@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Survey Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+      font-family: 'Arial', sans-serif;
+    }
+    .form-container {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-top: 50px;
+    }
+    h2 {
+      color: #2d3436;
+      font-weight: bold;
+      text-align: center;
+    }
+    .form-label {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    .form-select, .form-control {
+      border-radius: 8px;
+      border: 1px solid #ced4da;
+      transition: all 0.3s ease;
+    }
+    .form-select:focus, .form-control:focus {
+      border-color: #6c5ce7;
+      box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #6c5ce7, #00cec9);
+      border: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(to right, #00cec9, #6c5ce7);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h2>Health Survey Form</h2>
+      <form action="{{ url_for('userdata') }}" method="POST">
+        
+        <!-- Disease -->
+        <div class="mb-4">
+          <label for="disease" class="form-label">Disease</label>
+          <select name="disease" class="form-select" id="disease" required>
+            <option value="">Select Disease</option>
+            <option value="Acne">Acne</option>
+            <option value="Allergic Rhinitis">Allergic Rhinitis</option>
+            <option value="Alzheimer's Disease">Alzheimer's Disease</option>
+            <option value="Anemia">Anemia</option>
+            <option value="Anxiety Disorders">Anxiety Disorders</option>
+            <option value="Appendicitis">Appendicitis</option>
+            <option value="Asthma">Asthma</option>
+            <option value="Atherosclerosis">Atherosclerosis</option>
+            <option value="Autism Spectrum Disorder (ASD)">Autism Spectrum Disorder (ASD)</option>
+            <option value="Bipolar Disorder">Bipolar Disorder</option>
+            <option value="Bladder Cancer">Bladder Cancer</option>
+            <option value="Brain Tumor">Brain Tumor</option>
+            <option value="Breast Cancer">Breast Cancer</option>
+            <option value="Bronchitis">Bronchitis</option>
+            <option value="Cataracts">Cataracts</option>
+            <option value="Cerebral Palsy">Cerebral Palsy</option>
+            <option value="Chickenpox">Chickenpox</option>
+            <option value="Cholecystitis">Cholecystitis</option>
+            <option value="Cholera">Cholera</option>
+            <option value="Chronic Kidney Disease">Chronic Kidney Disease</option>
+            <option value="Chronic Obstructive Pulmonary Disease (COPD)">Chronic Obstructive Pulmonary Disease (COPD)</option>
+            <option value="Chronic Obstructive Pulmonary Disease">Chronic Obstructive Pulmonary Disease</option>
+            <option value="Cirrhosis">Cirrhosis</option>
+            <option value="Colorectal Cancer">Colorectal Cancer</option>
+            <option value="Common Cold">Common Cold</option>
+            <option value="Conjunctivitis (Pink Eye)">Conjunctivitis (Pink Eye)</option>
+            <option value="Coronary Artery Disease">Coronary Artery Disease</option>
+            <option value="Crohn's Disease">Crohn's Disease</option>
+            <option value="Cystic Fibrosis">Cystic Fibrosis</option>
+            <option value="Dementia">Dementia</option>
+            <option value="Dengue Fever">Dengue Fever</option>
+            <option value="Depression">Depression</option>
+            <option value="Diabetes">Diabetes</option>
+            <option value="Diverticulitis">Diverticulitis</option>
+            <option value="Down Syndrome">Down Syndrome</option>
+            <option value="Eating Disorders (Anorexia, Bulimia)">Eating Disorders (Anorexia, Bulimia)</option>
+            <option value="Ebola Virus">Ebola Virus</option>
+            <option value="Eczema">Eczema</option>
+            <option value="Endometriosis">Endometriosis</option>
+            <option value="Epilepsy">Epilepsy</option>
+            <option value="Esophageal Cancer">Esophageal Cancer</option>
+            <option value="Fibromyalgia">Fibromyalgia</option>
+            <option value="Gastroenteritis">Gastroenteritis</option>
+            <option value="Glaucoma">Glaucoma</option>
+            <option value="Gout">Gout</option>
+            <option value="Hemophilia">Hemophilia</option>
+            <option value="Hemorrhoids">Hemorrhoids</option>
+            <option value="Hepatitis">Hepatitis</option>
+            <option value="Hepatitis B">Hepatitis B</option>
+            <option value="HIV/AIDS">HIV/AIDS</option>
+            <option value="Hyperglycemia">Hyperglycemia</option>
+            <option value="Hypertension">Hypertension</option>
+            <option value="Hypertensive Heart Disease">Hypertensive Heart Disease</option>
+            <option value="Hyperthyroidism">Hyperthyroidism</option>
+            <option value="Hypoglycemia">Hypoglycemia</option>
+            <option value="Hypothyroidism">Hypothyroidism</option>
+            <option value="Influenza">Influenza</option>
+            <option value="Kidney Cancer">Kidney Cancer</option>
+            <option value="Kidney Disease">Kidney Disease</option>
+            <option value="Klinefelter Syndrome">Klinefelter Syndrome</option>
+            <option value="Liver Cancer">Liver Cancer</option>
+            <option value="Liver Disease">Liver Disease</option>
+            <option value="Lung Cancer">Lung Cancer</option>
+            <option value="Lyme Disease">Lyme Disease</option>
+            <option value="Lymphoma">Lymphoma</option>
+            <option value="Malaria">Malaria</option>
+            <option value="Marfan Syndrome">Marfan Syndrome</option>
+            <option value="Measles">Measles</option>
+            <option value="Melanoma">Melanoma</option>
+            <option value="Migraine">Migraine</option>
+            <option value="Multiple Sclerosis">Multiple Sclerosis</option>
+            <option value="Mumps">Mumps</option>
+            <option value="Muscular Dystrophy">Muscular Dystrophy</option>
+            <option value="Myocardial Infarction (Heart Attack)">Myocardial Infarction (Heart Attack)</option>
+            <option value="Obsessive-Compulsive Disorder (OCD)">Obsessive-Compulsive Disorder (OCD)</option>
+            <option value="Osteoarthritis">Osteoarthritis</option>
+            <option value="Osteomyelitis">Osteomyelitis</option>
+            <option value="Osteoporosis">Osteoporosis</option>
+            <option value="Otitis Media (Ear Infection)">Otitis Media (Ear Infection)</option>
+            <option value="Ovarian Cancer">Ovarian Cancer</option>
+            <option value="Pancreatic Cancer">Pancreatic Cancer</option>
+            <option value="Pancreatitis">Pancreatitis</option>
+            <option value="Parkinson's Disease">Parkinson's Disease</option>
+            <option value="Pneumocystis Pneumonia (PCP)">Pneumocystis Pneumonia (PCP)</option>
+            <option value="Pneumonia">Pneumonia</option>
+            <option value="Pneumothorax">Pneumothorax</option>
+            <option value="Polio">Polio</option>
+            <option value="Polycystic Ovary Syndrome (PCOS)">Polycystic Ovary Syndrome (PCOS)</option>
+            <option value="Prader-Willi Syndrome">Prader-Willi Syndrome</option>
+            <option value="Prostate Cancer">Prostate Cancer</option>
+            <option value="Psoriasis">Psoriasis</option>
+            <option value="Rabies">Rabies</option>
+            <option value="Rheumatoid Arthritis">Rheumatoid Arthritis</option>
+            <option value="Rubella">Rubella</option>
+            <option value="Schizophrenia">Schizophrenia</option>
+            <option value="Scoliosis">Scoliosis</option>
+            <option value="Sepsis">Sepsis</option>
+            <option value="Sickle Cell Anemia">Sickle Cell Anemia</option>
+            <option value="Sinusitis">Sinusitis</option>
+            <option value="Sleep Apnea">Sleep Apnea</option>
+            <option value="Spina Bifida">Spina Bifida</option>
+            <option value="Stroke">Stroke</option>
+            <option value="Systemic Lupus Erythematosus">Systemic Lupus Erythematosus</option>
+            <option value="Testicular Cancer">Testicular Cancer</option>
+            <option value="Tetanus">Tetanus</option>
+            <option value="Thyroid Cancer">Thyroid Cancer</option>
+            <option value="Tonsillitis">Tonsillitis</option>
+            <option value="Tourette Syndrome">Tourette Syndrome</option>
+            <option value="Tuberculosis">Tuberculosis</option>
+            <option value="Turner Syndrome">Turner Syndrome</option>
+            <option value="Typhoid Fever">Typhoid Fever</option>
+            <option value="Ulcerative Colitis">Ulcerative Colitis</option>
+            <option value="Urinary Tract Infection">Urinary Tract Infection</option>
+            <option value="Urinary Tract Infection (UTI)">Urinary Tract Infection (UTI)</option>
+            <option value="Williams Syndrome">Williams Syndrome</option>
+            <option value="Zika Virus">Zika Virus</option>
+          </select>
+        </div>
+
+        <!-- Fever -->
+        <div class="mb-4">
+          <label for="fever" class="form-label">Fever</label>
+          <select name="fever" class="form-select" id="fever" required>
+            <option value="">Select Fever Status</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <!-- Cough -->
+        <div class="mb-4">
+          <label for="cough" class="form-label">Cough</label>
+          <select name="cough" class="form-select" id="cough" required>
+            <option value="">Select Cough Status</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <!-- Fatigue -->
+        <div class="mb-4">
+          <label for="fatigue" class="form-label">Fatigue</label>
+          <select name="fatigue" class="form-select" id="fatigue" required>
+            <option value="">Select Fatigue Status</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <!-- Difficulty Breathing -->
+        <div class="mb-4">
+          <label for="difficulty_breathing" class="form-label">Difficulty Breathing</label>
+          <select name="difficulty_breathing" class="form-select" id="difficulty_breathing" required>
+            <option value="">Select Difficulty Breathing Status</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <!-- Age -->
+        <div class="mb-4">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" name="age" id="age" placeholder="Enter your age" required>
+        </div>
+
+        <!-- Gender -->
+        <div class="mb-4">
+          <label for="gender" class="form-label">Gender</label>
+          <select name="gender" class="form-select" id="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Blood Pressure -->
+        <div class="mb-4">
+          <label for="blood_pressure" class="form-label">Blood Pressure</label>
+          <select class="form-control" name="blood_pressure" id="blood_pressure" required>
+            <option value="normal">Normal</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        
+        <!-- Cholesterol Level -->
+        <div class="mb-4">
+          <label for="cholesterol_level" class="form-label">Cholesterol Level</label>
+          <select class="form-control" name="cholesterol_level" id="cholesterol_level" required>
+            <option value="normal">Normal</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+  
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
